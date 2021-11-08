@@ -12,13 +12,17 @@ const UseStateArray = () => {
       {people.map((person) => {
         const { id, name } = person;
         return (
-          <div key={id} className='item'>
+          <div  className='item'>
             <h4>{name}</h4>
             <button onClick={() => removeItem(id)}>remove</button>
           </div>
         );
       })}
-      <button className='btn' onClick={() => setPeople([])}>
+      <button className='btn' onClick={() => setPeople(prev => {
+        return [...prev, {
+          name:'johnsa'
+        }]
+      })}>
         clear items
       </button>
     </>

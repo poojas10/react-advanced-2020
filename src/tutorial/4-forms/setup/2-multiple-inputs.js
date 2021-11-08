@@ -7,24 +7,19 @@ import React, { useState } from 'react';
 // dynamic object keys
 
 const ControlledInputs = () => {
-  const [firstName, setFirstName] = useState('');
-  const [email, setEmail] = useState('');
-  const [people, setPeople] = useState([]);
+const [person,setPerson] =useState({firstName:'',email:''})
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (firstName && email) {
-      const person = { id: new Date().getTime().toString(), firstName, email };
-      console.log(person);
-      setPeople((people) => {
-        return [...people, person];
-      });
-      setFirstName('');
-      setEmail('');
-    } else {
-      console.log('empty values');
-    }
+   
   };
+  const inputChange=(e)=>{
+const name=e.target.name;
+const value=e.target.value;
+setPerson((prev)=>{
+  return {...prev,[name]:value}
+})
+  }
   return (
     <>
       <article>
@@ -35,8 +30,8 @@ const ControlledInputs = () => {
               type='text'
               id='firstName'
               name='firstName'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={person.firstName}
+              onChange={inputChange}
             />
           </div>
           <div className='form-control'>
@@ -45,13 +40,13 @@ const ControlledInputs = () => {
               type='email'
               id='email'
               name='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={person.email}
+              onChange={inputChange}
             />
           </div>
           <button type='submit'>add person</button>
         </form>
-        {people.map((person, index) => {
+        {/* {people.map((person, index) => {
           const { id, firstName, email } = person;
           return (
             <div className='item' key={id}>
@@ -59,7 +54,7 @@ const ControlledInputs = () => {
               <p>{email}</p>
             </div>
           );
-        })}
+        })} */}
       </article>
     </>
   );

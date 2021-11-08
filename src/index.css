@@ -60,6 +60,9 @@ Global Styles
 ===============
 */
 
+.dark{
+  background-color: #222;
+}
 *,
 ::after,
 ::before {
@@ -75,8 +78,18 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+.quiz{
+  padding: 2rem;
+}
+span{
+  display: flex;
+}
+span input{
+  margin-right: 2rem;
+}
 ul {
   list-style-type: none;
+  display:none;
 }
 a {
   text-decoration: none;
@@ -316,5 +329,8 @@ p {
   color: var(--clr-white);
   padding: 0.25rem 0.5rem;
   text-transform: capitalize;
+  cursor: pointer;
+}
+button{
   cursor: pointer;
 }

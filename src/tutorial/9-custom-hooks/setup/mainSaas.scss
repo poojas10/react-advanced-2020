@@ -1,0 +1,26 @@
+$myColor:#2d9966;
+$font-size:4.5rem;
+$base-font-percentage:62.5%;
+html{
+    font-size: $base-font-percentage;
+}
+body{
+    font-size: 1.6rem;
+}
+
+h1{
+    color: $myColor;
+    font-size: $font-size;
+}
+p{
+    font-size:2.3rem ;
+}
+.container{
+    padding: 1rem 4rem;
+}
+ 
+  @media screen and (max-width:932px){
+    html{
+        font-size: 45%;
+    }
+}

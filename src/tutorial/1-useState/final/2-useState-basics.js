@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from "./addTask.module.css";
 // starts with use
 // component must be uppercase
 // invoke inside function/component body
@@ -20,12 +21,13 @@ const UseStateBasics = () => {
   };
 
   return (
-    <React.Fragment>
-      <h1>{text}</h1>
-      <button type='button' className='btn' onClick={handleClick}>
-        change title
+    <>
+      <h1 className='hey'>{text}</h1>
+      <button type='button' className={styles.hey} onClick={handleClick}>click</button>
+      <button type='button' className={styles.hey}>
+        click
       </button>
-    </React.Fragment>
+    </>
   );
 };
 
